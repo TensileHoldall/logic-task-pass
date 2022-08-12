@@ -1,0 +1,61 @@
+Q1/Write a method that will remove any given character from a String? (Python)
+
+str = "method"
+
+print("Original string: " + str)
+res_str = str[:2] + str[3:]
+
+print("String after removal of character: " + res_str)
+
+Q2/Write a program to find all prime numbers up to a given range
+of numbers? (C++)
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int i,a[10],j,k=0;
+cout<<"Enter the array values : ";
+for(i=0;i<10;i++)
+cin>>a[i];
+for(i=0;i<10;i++)
+{
+for(j=2;j<a[i]/2;j++)
+if(a[i]%j==0)
+{ k=1;
+break; }
+if(k==0) cout<<"The number "<<a[i]<<" is prime"<<endl;
+k=0;
+}
+return 0;}
+
+Q3/write a function that count how many the given character repeated
+in a given string? (C++)
+
+#include <iostream>
+using namespace std;
+int occurrences_char(string str, int length, int n, char ch){
+   int count = 0;
+   for (int i = 0; i < length; i++){
+      if (str[i] == ch){
+         count++;
+      }
+   }
+   int occ = n / length;
+   count = count * occ;
+   for (int i = 0; i < n % length; i++){
+      if (str[i] == ch){
+         count++;
+      }
+   }
+   return count;
+}
+int main(){
+   string str = "Hello World";
+   char ch = 'o';
+   int n = 12;
+   int length = str.size();
+   cout<<"Count of occurrences of a character in a repeated string are: "<<occurrences_char(str, length, n, ch);
+   return 0;
+}
+
